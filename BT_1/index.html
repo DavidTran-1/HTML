@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAI 1</title>
+
+    <style>
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            margin: 10px;
+        }
+
+        label {
+            font-size: 25px;
+        }
+
+        .header {
+            font-size: 200%;
+            color: green;
+            padding: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="header">Bài 1</h1>
+    <form>
+        <label for="fname">Nhập a</label>
+        <input type="text" id="a" name="A" placeholder="Type number">
+        <label for="lname">Nhập b</label>
+        <input type="text" id="b" name="B" placeholder="Type number">
+    </form>
+
+    <button id="bt">In kết quả</button>
+    <p>Kết quả:</p>
+    <p style="margin-left: 10px;" id="kq"></p>
+
+    <script>
+        var bt = document.getElementById("bt");
+        var kq = document.getElementById("kq");
+        var a = document.getElementById("a");
+        var b = document.getElementById("b");
+
+        bt.onclick = function () {
+            var resuft = 0;
+            var x1, x2;
+
+            if (a.value == "") alert("Bạn vui lòng nhập a");
+            else if (b.value == "") alert("Bạn vui lòng nhập b");
+
+            x1 = parseFloat(a.value);
+            x2 = parseFloat(b.value);
+
+            if (x1 < x2) {
+                for (let a = x1; a <= x2; a++) {
+                    resuft = resuft + a;
+                }
+                kq.innerHTML = resuft;
+            }
+            else alert("bạn vui lòng nhập a nhỏ hơn b");
+        }
+    </script>
+</body>
+
+</html>
